@@ -39,16 +39,16 @@
       navPrivacy: "Privacy",
       navRisk: "Risk",
       eyebrow: "Kron Family wellness project",
-      heroTitle: "A polished wellness gateway for the Kron ecosystem.",
-      heroLead: "Clean presentation, global access, and a concise project experience built for PURITE-aligned wellness communities.",
-      primaryCta: "Explore access",
+      heroTitle: "puriKRON (PKRON) token information and creation overview.",
+      heroLead: "Official project page for PKRON token details, creation status, planned wellness utility, Kron Family migration context, and legal disclosures.",
+      primaryCta: "View token details",
       secondaryCta: "View legal pages",
       metricOneLabel: "Project",
       metricTwoLabel: "Ecosystem",
       metricThreeLabel: "Languages",
       visionKicker: "Vision",
       visionTitle: "Premium, calm, and ready for international visitors.",
-      visionText: "The page now focuses on brand confidence, simple navigation, and a lighter message without long informational blocks.",
+      visionText: "puriKRON is a Kron Family experimental token planned for PURITE Pilates style wellness utility, loyalty access, participation rewards, and future EnteleKRON mainnet migration.",
       ecosystemKicker: "Ecosystem",
       ecosystemTitle: "Connected to the wider Kron project family.",
       ecosystemText: "A consistent structure keeps puriKRON aligned with TVK Group, EnteleKRON, and related ecosystem properties.",
@@ -56,7 +56,7 @@
       accessTitle: "Every key page supports the language selector.",
       accessText: "Visitors can switch language on the homepage, terms page, privacy page, or risk page and keep that choice while browsing.",
       linksKicker: "Official links",
-      linksTitle: "Project destinations",
+      linksTitle: "Official project references",
       footerBrand: "© puriKRON. Kron ecosystem project.",
       legalKicker: "Legal"
     },
@@ -910,6 +910,97 @@
     )
   };
 
+  const tokenCopy = {
+    navVision: "Token",
+    navEcosystem: "Creation",
+    navAccess: "Utility",
+    eyebrow: "Kron Family token project",
+    heroTitle: "puriKRON (PKRON) token information and creation overview.",
+    heroLead: "Official project page for PKRON token details, creation status, planned wellness utility, Kron Family migration context, and legal disclosures.",
+    primaryCta: "View token details",
+    secondaryCta: "Read risk disclosure",
+    metricOneLabel: "Token",
+    metricTwoLabel: "Symbol",
+    metricThreeLabel: "Supply",
+    visionKicker: "Token snapshot",
+    visionTitle: "Core PKRON information visible in one place.",
+    visionText: "puriKRON is a Kron Family experimental token planned for PURITE Pilates style wellness utility, loyalty access, participation rewards, and future EnteleKRON mainnet migration.",
+    ecosystemKicker: "Creation status",
+    ecosystemTitle: "Creation information will be published before public use.",
+    accessKicker: "Planned utility",
+    accessTitle: "Utility-first token design for wellness engagement.",
+    linksKicker: "Official links",
+    linksTitle: "Official project references",
+    tokenNameLabel: "Token name",
+    tokenSymbolLabel: "Symbol",
+    tokenNetworkLabel: "Network plan",
+    tokenSupplyLabel: "Total supply",
+    tokenContractLabel: "Contract address",
+    tokenWalletLabel: "Genesis wallet",
+    creationItemOne: "Contract address: TBA and must be verified only from official sources.",
+    creationItemTwo: "Genesis wallet: TBA for launch transparency.",
+    creationItemThree: "Deployment network: EVM planning for Base / Ethereum compatibility.",
+    creationItemFour: "Future migration: planned alignment with the EnteleKRON mainnet.",
+    utilityItemOne: "App rewards for attendance, streaks, and verified participation.",
+    utilityItemTwo: "Membership tiers and loyalty perks for future PURITE-aligned experiences.",
+    utilityItemThree: "Partner discounts, events, workshops, retreats, and badges.",
+    utilityItemFour: "No guaranteed profit, price, exchange listing, liquidity, or market value.",
+    legalInfoKicker: "Legal information",
+    legalInfoTitle: "Read the legal pages before relying on any project information.",
+    legalInfoText: "The Terms, Privacy Policy, and Risk Disclosure pages describe website use, privacy handling, token risk, no-advice limits, and verification responsibilities.",
+    transparencyKicker: "Transparency",
+    transparencyTitle: "Official updates should be checked before action.",
+    transparencyText: "Contract addresses, launch details, wallets, and migration procedures should only be trusted when published through official puriKRON, TVK Group, or Kron ecosystem channels.",
+    footerBrand: "© puriKRON. PKRON token project."
+  };
+
+  const tokenLegalAdditions = {
+    terms: [
+      {
+        title: "Token information",
+        text: "PKRON details shown on this website describe current project planning, including token name, symbol, supply, network plan, contract status, genesis wallet status, and migration intent."
+      },
+      {
+        title: "Creation status",
+        text: "Contract address, genesis wallet, deployment records, and launch procedures are marked TBA until officially published. Visitors should not rely on unofficial addresses."
+      },
+      {
+        title: "No guarantees",
+        text: "puriKRON does not guarantee profit, price, liquidity, exchange listing, market value, migration timing, or utility availability."
+      }
+    ],
+    privacy: [
+      {
+        title: "Local preference",
+        text: "The language selector can store the selected language in the visitor's browser so the homepage and legal pages open consistently."
+      },
+      {
+        title: "External links",
+        text: "Official project references may open third-party websites such as TVK Group, EnteleKRON, SOVRA, and Kron Family domains with their own privacy practices."
+      },
+      {
+        title: "Contact",
+        text: "For privacy, website, or project information questions, use hq@tvk.group and avoid sending sensitive wallet keys or private credentials."
+      }
+    ],
+    risk: [
+      {
+        title: "Token risk",
+        text: "Experimental digital tokens can lose value, lack liquidity, fail to launch planned utility, or become unusable because of market, technical, legal, or operational factors."
+      },
+      {
+        title: "Verification risk",
+        text: "Fake contracts, copied websites, impersonation, phishing links, and unofficial social posts can appear. Verify official sources before any transaction."
+      },
+      {
+        title: "Creation risk",
+        text: "Until deployment details are published, contract address and genesis wallet entries remain TBA. Do not interact with any claimed PKRON contract unless it is officially confirmed."
+      }
+    ]
+  };
+
+  Object.values(copy).forEach((entry) => Object.assign(entry, tokenCopy));
+
   function legalPages(terms, privacy, risk) {
     return {
       terms: pageFromFlatArray(terms),
@@ -981,7 +1072,8 @@
     if (lead) lead.textContent = pageCopy.lead;
     if (grid) {
       grid.innerHTML = "";
-      pageCopy.cards.forEach((card) => {
+      const cards = pageCopy.cards.concat(tokenLegalAdditions[page] || []);
+      cards.forEach((card) => {
         const article = document.createElement("article");
         article.className = "legal-card";
         article.innerHTML = `<h2></h2><p></p>`;
