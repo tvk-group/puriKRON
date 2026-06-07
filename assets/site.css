@@ -358,6 +358,73 @@ h2 {
   line-height: 1.68;
 }
 
+.token-grid,
+.detail-grid {
+  margin-top: 28px;
+}
+
+.token-table {
+  display: grid;
+  gap: 10px;
+  margin: 24px 0;
+}
+
+.token-table div {
+  display: grid;
+  grid-template-columns: minmax(120px, 0.42fr) minmax(0, 1fr);
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.token-table span {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.token-table strong {
+  word-break: break-word;
+}
+
+.status-list {
+  display: grid;
+  gap: 14px;
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--muted);
+  line-height: 1.62;
+}
+
+.status-list li {
+  position: relative;
+  padding-left: 24px;
+}
+
+.status-list li::before {
+  position: absolute;
+  top: 0.62em;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  content: "";
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+}
+
+[dir="rtl"] .status-list li {
+  padding-right: 24px;
+  padding-left: 0;
+}
+
+[dir="rtl"] .status-list li::before {
+  right: 0;
+  left: auto;
+}
+
 .link-panel {
   display: flex;
   justify-content: space-between;
@@ -492,6 +559,11 @@ h2 {
 
   .metric-strip {
     grid-template-columns: 1fr;
+  }
+
+  .token-table div {
+    grid-template-columns: 1fr;
+    gap: 5px;
   }
 
   h1 {
