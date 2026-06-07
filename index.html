@@ -2,445 +2,113 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>puriKRON – Kron Family Token for PURITÉ Pilates</title>
+  <title>puriKRON | Professional Wellness Ecosystem</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="puriKRON (PKRON) is a Kron Family experimental token designed for PURITÉ Pilates utility, loyalty and app-based rewards — with a future migration to the EnteleKRON mainnet." />
-
-  <style>
-    :root{
-      --bg0:#050812;
-      --bg1:#0b1026;
-      --card:#0b1224;
-      --stroke:#1f2a44;
-      --text:#e5e7eb;
-      --muted:#94a3b8;
-
-      /* puriKRON palette (clean / wellness / premium) */
-      --accent:#a78bfa;     /* soft violet */
-      --accent2:#22c55e;    /* fresh green */
-      --accent3:#60a5fa;    /* calm blue */
-      --gold:#fbbf24;
-
-      --radius:18px;
-      --shadow:0 18px 50px rgba(0,0,0,0.45);
-    }
-
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-      color:var(--text);
-      background:
-        radial-gradient(circle at 15% 10%, rgba(167,139,250,0.18), transparent 55%),
-        radial-gradient(circle at 85% 20%, rgba(34,197,94,0.14), transparent 55%),
-        radial-gradient(circle at 50% 95%, rgba(96,165,250,0.12), transparent 55%),
-        linear-gradient(180deg, var(--bg0), var(--bg1));
-    }
-
-    a{color:var(--gold);text-decoration:none}
-    a:hover{text-decoration:underline}
-
-    .page{min-height:100vh;display:flex;flex-direction:column;}
-    header{
-      padding:18px 6vw;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      flex-wrap:wrap;
-      gap:10px;
-    }
-
-    .logo{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      font-weight:850;
-      letter-spacing:0.10em;
-      text-transform:uppercase;
-      font-size:0.95rem;
-    }
-    .mark{
-      width:34px;height:34px;border-radius:12px;
-      background: conic-gradient(from 210deg, var(--accent3), var(--accent), var(--accent2), var(--accent3));
-      box-shadow: 0 12px 30px rgba(0,0,0,0.45);
-      display:grid;place-items:center;
-      border:1px solid rgba(255,255,255,0.10);
-      color:#0b1026;
-      font-weight:900;
-    }
-
-    header nav a{
-      margin-left:14px;
-      font-size:0.92rem;
-      color:var(--text);
-      opacity:0.9;
-    }
-
-    main{
-      flex:1;
-      padding:26px 6vw 48px;
-      display:grid;
-      grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);
-      gap:28px;
-      align-items:center;
-    }
-    @media(max-width:820px){
-      main{grid-template-columns:1fr;padding-top:0;}
-      header{align-items:flex-start;}
-      header nav{display:flex;flex-wrap:wrap;gap:10px}
-      header nav a{margin-left:0}
-    }
-
-    .hero-card{
-      border-radius:22px;
-      padding:22px;
-      box-shadow:var(--shadow);
-      border:1px solid rgba(255,255,255,0.10);
-      background:
-        linear-gradient(135deg, rgba(167,139,250,0.22), rgba(34,197,94,0.12) 45%, rgba(96,165,250,0.16)),
-        rgba(15,23,42,0.30);
-      backdrop-filter: blur(8px);
-    }
-
-    .pill{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      font-size:0.76rem;
-      text-transform:uppercase;
-      letter-spacing:0.12em;
-      color:rgba(229,231,235,0.75);
-      margin-bottom:10px;
-    }
-    .dot{
-      width:8px;height:8px;border-radius:999px;
-      background: var(--accent2);
-      box-shadow: 0 0 0 4px rgba(34,197,94,0.18);
-    }
-
-    h1{
-      font-size:clamp(2.0rem,3.8vw,2.7rem);
-      line-height:1.12;
-      margin:0 0 10px;
-    }
-
-    .sub{
-      font-size:0.98rem;
-      color:rgba(229,231,235,0.82);
-      max-width:560px;
-      line-height:1.65;
-      margin-bottom:14px;
-    }
-
-    .tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;font-size:0.82rem;}
-    .tag{
-      padding:5px 10px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,0.12);
-      background: rgba(2,6,23,0.35);
-      color:rgba(229,231,235,0.82);
-    }
-
-    .btn-row{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0 6px;}
-    .btn{
-      border-radius:999px;
-      padding:9px 16px;
-      font-size:0.9rem;
-      border:1px solid rgba(255,255,255,0.14);
-      cursor:pointer;
-      text-decoration:none;
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      transition: transform .08s ease;
-      user-select:none;
-    }
-    .btn:active{transform:scale(0.98)}
-    .btn.primary{
-      background: linear-gradient(135deg, rgba(167,139,250,0.95), rgba(34,197,94,0.85));
-      color:#081026;
-      border-color: rgba(255,255,255,0.00);
-      font-weight:700;
-    }
-    .btn.secondary{
-      background: rgba(2,6,23,0.25);
-      color: var(--text);
-    }
-
-    .note{
-      font-size:0.82rem;
-      color:rgba(148,163,184,0.92);
-      max-width:600px;
-      line-height:1.55;
-    }
-
-    .side-card{
-      background: rgba(2,6,23,0.55);
-      border-radius: var(--radius);
-      padding:18px;
-      border:1px solid rgba(255,255,255,0.10);
-      box-shadow: 0 18px 40px rgba(0,0,0,0.55);
-    }
-
-    .title{
-      font-size:0.85rem;
-      text-transform:uppercase;
-      letter-spacing:0.14em;
-      color:rgba(148,163,184,0.92);
-      margin-bottom:10px;
-    }
-
-    .kv{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:10px 18px;
-      font-size:0.92rem;
-    }
-    .kv-label{
-      font-size:0.76rem;
-      text-transform:uppercase;
-      letter-spacing:0.08em;
-      color:rgba(148,163,184,0.9);
-    }
-    .kv-value{
-      font-weight:600;
-      word-break:break-all;
-      color:rgba(229,231,235,0.95);
-    }
-
-    .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;font-size:0.80rem;}
-    .chip{
-      padding:4px 10px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,0.12);
-      color:rgba(148,163,184,0.95);
-      background: rgba(2,6,23,0.35);
-    }
-
-    .mini{
-      font-size:0.78rem;
-      color:rgba(148,163,184,0.92);
-      line-height:1.55;
-      margin-top:10px;
-    }
-
-    footer{
-      padding:14px 6vw 22px;
-      font-size:0.82rem;
-      color:rgba(148,163,184,0.95);
-      display:flex;
-      justify-content:space-between;
-      flex-wrap:wrap;
-      gap:10px;
-      border-top:1px solid rgba(255,255,255,0.06);
-      background: rgba(2,6,23,0.25);
-    }
-    footer a{color:rgba(148,163,184,0.95)}
-  </style>
+  <meta name="description" content="puriKRON is a polished wellness-facing project page for the Kron ecosystem with multilingual navigation and concise project messaging." />
+  <link rel="stylesheet" href="/assets/site.css" />
+  <script src="/assets/site.js" defer></script>
 </head>
+<body data-page="home">
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="/" data-localized-link>
+        <span class="brand-mark">pK</span>
+        <span class="brand-word">puriKRON</span>
+      </a>
 
-<body>
-<div class="page">
+      <nav class="primary-nav" aria-label="Primary navigation">
+        <a href="/#vision" data-localized-link data-i18n="navVision">Vision</a>
+        <a href="/#ecosystem" data-localized-link data-i18n="navEcosystem">Ecosystem</a>
+        <a href="/#access" data-localized-link data-i18n="navAccess">Access</a>
+        <a href="/legal/terms.html" data-localized-link data-i18n="navTerms">Terms</a>
+        <a href="/legal/privacy.html" data-localized-link data-i18n="navPrivacy">Privacy</a>
+        <a href="/legal/risk.html" data-localized-link data-i18n="navRisk">Risk</a>
+      </nav>
 
-  <header>
-    <div class="logo">
-      <div class="mark">P</div>
-      <div>puriKRON</div>
-    </div>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#token">Token</a>
-      <a href="#utility">Utility</a>
-      <a href="#family">Kron Family</a>
-      <a href="#links">Links</a>
-      <a href="/legal/terms.html">Legal</a>
-    </nav>
-  </header>
+      <label class="language-picker">
+        <span data-i18n="languageLabel">Language</span>
+        <select id="language-select" aria-label="Language"></select>
+      </label>
+    </header>
 
-  <main>
-
-    <section id="about">
-      <div class="hero-card">
-        <div class="pill"><span class="dot"></span> Kron Family • Wellness Utility • PURITÉ Pilates</div>
-        <h1>Wellness-native token experiments for real-world Pilates engagement.</h1>
-        <p class="sub">
-          <strong>puriKRON</strong> is a Kron Family experimental token designed to support
-          <strong>PURITÉ Pilates</strong> style utilities: loyalty, membership perks, app rewards,
-          and on-chain proof-of-participation — with a future <strong>migration to EnteleKRON mainnet</strong>.
-          It is not a promise of profit, and it is not a guarantee of value.
-        </p>
-
-        <div class="tags">
-          <span class="tag">Token: PKRON</span>
-          <span class="tag">Supply: 10B (standard)</span>
-          <span class="tag">EVM (Base/Ethereum planning)</span>
-          <span class="tag">Future EnteleKRON migration</span>
-        </div>
-
-        <div class="btn-row">
-          <a class="btn primary" href="#token">Token Snapshot</a>
-          <a class="btn secondary" href="/legal/risk.html">Risk Disclosure</a>
-          <a class="btn secondary" href="#links">Official Links</a>
-        </div>
-
-        <p class="note">
-          ⚠️ High-risk experimental token. Liquidity, exchanges, price discovery, and market behavior are not guaranteed.
-          Always verify addresses from official sources and never invest more than you can afford to lose.
-        </p>
-      </div>
-    </section>
-
-    <aside>
-
-      <div id="token" class="side-card" style="margin-bottom:16px;">
-        <div class="title">Token Snapshot</div>
-        <div class="kv">
-          <div>
-            <div class="kv-label">Token Name</div>
-            <div class="kv-value">puriKRON</div>
-          </div>
-          <div>
-            <div class="kv-label">Symbol</div>
-            <div class="kv-value">PKRON</div>
-          </div>
-          <div>
-            <div class="kv-label">Network</div>
-            <div class="kv-value">EVM (Base / Ethereum)</div>
-          </div>
-          <div>
-            <div class="kv-label">Total Supply</div>
-            <div class="kv-value">10,000,000,000</div>
-          </div>
-          <div>
-            <div class="kv-label">Contract</div>
-            <div class="kv-value">TBA</div>
-          </div>
-          <div>
-            <div class="kv-label">Genesis Wallet</div>
-            <div class="kv-value">TBA</div>
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-copy">
+          <p class="eyebrow" data-i18n="eyebrow">Kron Family wellness project</p>
+          <h1 data-i18n="heroTitle">A polished wellness gateway for the Kron ecosystem.</h1>
+          <p class="hero-lead" data-i18n="heroLead">Clean presentation, global access, and a concise project experience built for PURITE-aligned wellness communities.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#access" data-i18n="primaryCta">Explore access</a>
+            <a class="button button-secondary" href="/legal/terms.html" data-localized-link data-i18n="secondaryCta">View legal pages</a>
           </div>
         </div>
-
-        <div class="mini">
-          If you want, I can also add the same “allocation transparency + anti-dump procedure” section here
-          (14-day public notice + max 10% per sale), exactly like Kron Family standards.
-        </div>
-      </div>
-
-      <div id="utility" class="side-card" style="margin-bottom:16px;">
-        <div class="title">Utility (Planned)</div>
-        <div class="kv" style="grid-template-columns:1fr;">
-          <div>
-            <div class="kv-label">Use Cases</div>
-            <div class="kv-value">
-              • App rewards for attendance & streaks<br/>
-              • Loyalty tiers (Bronze → Diamond)<br/>
-              • Partner discounts & member perks<br/>
-              • Event access (classes, workshops, retreats)<br/>
-              • Proof-of-Participation badges
-            </div>
-          </div>
-          <div>
-            <div class="kv-label">Core Rule</div>
-            <div class="kv-value">
-              Utility-first experimentation. No guaranteed profit, no guaranteed exchange listing.
-            </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="orb orb-one"></div>
+          <div class="orb orb-two"></div>
+          <div class="glass-card">
+            <span>puriKRON</span>
+            <strong>PKRON</strong>
           </div>
         </div>
-        <div class="chips">
-          <span class="chip">Loyalty</span>
-          <span class="chip">Membership</span>
-          <span class="chip">Rewards</span>
-          <span class="chip">Proof-of-Participation</span>
+      </section>
+
+      <section class="metric-strip" aria-label="Project highlights">
+        <div>
+          <span data-i18n="metricOneLabel">Project</span>
+          <strong>puriKRON</strong>
         </div>
-      </div>
-
-      <div id="family" class="side-card" style="margin-bottom:16px;">
-        <div class="title">Kron Family</div>
-        <div class="kv" style="grid-template-columns:1fr;">
-          <div>
-            <div class="kv-label">Family Members</div>
-            <div class="kv-value">
-              • eKRON<br/>
-              • mineKRON<br/>
-              • soviKRON<br/>
-              • alviKRON<br/>
-              • puriKRON (this token)
-            </div>
-          </div>
-          <div>
-            <div class="kv-label">Migration</div>
-            <div class="kv-value">
-              All Kron Family tokens are planned to migrate to the future EnteleKRON mainnet.
-            </div>
-          </div>
+        <div>
+          <span data-i18n="metricTwoLabel">Ecosystem</span>
+          <strong>Kron Family</strong>
         </div>
-        <div class="chips">
-          <span class="chip">Shared Standards</span>
-          <span class="chip">Transparent Allocations</span>
-          <span class="chip">Future L1 Migration</span>
+        <div>
+          <span data-i18n="metricThreeLabel">Languages</span>
+          <strong>25</strong>
         </div>
-      </div>
+      </section>
 
-      <div id="links" class="side-card">
-        <div class="title">Official Links</div>
-        <div class="kv" style="grid-template-columns:1fr;">
-          <div>
-            <div class="kv-label">TVK Group</div>
-            <div class="kv-value"><a href="https://www.tvk.group" target="_blank" rel="noopener">www.tvk.group</a></div>
-          </div>
-          <div>
-            <div class="kv-label">EnteleKRON</div>
-            <div class="kv-value"><a href="https://www.entelekron.org" target="_blank" rel="noopener">www.entelekron.org</a></div>
-          </div>
-          <div>
-            <div class="kv-label">SOVRA</div>
-            <div class="kv-value"><a href="https://www.sovra.network" target="_blank" rel="noopener">www.sovra.network</a></div>
-          </div>
+      <section class="content-grid" id="vision">
+        <article class="feature-card feature-card-large">
+          <span class="card-kicker" data-i18n="visionKicker">Vision</span>
+          <h2 data-i18n="visionTitle">Premium, calm, and ready for international visitors.</h2>
+          <p data-i18n="visionText">The page now focuses on brand confidence, simple navigation, and a lighter message without long informational blocks.</p>
+        </article>
+        <article class="feature-card" id="ecosystem">
+          <span class="card-kicker" data-i18n="ecosystemKicker">Ecosystem</span>
+          <h2 data-i18n="ecosystemTitle">Connected to the wider Kron project family.</h2>
+          <p data-i18n="ecosystemText">A consistent structure keeps puriKRON aligned with TVK Group, EnteleKRON, and related ecosystem properties.</p>
+        </article>
+        <article class="feature-card" id="access">
+          <span class="card-kicker" data-i18n="accessKicker">Access</span>
+          <h2 data-i18n="accessTitle">Every key page supports the language selector.</h2>
+          <p data-i18n="accessText">Visitors can switch language on the homepage, terms page, privacy page, or risk page and keep that choice while browsing.</p>
+        </article>
+      </section>
 
-          <div>
-            <div class="kv-label">Kron Family Domains</div>
-            <div class="kv-value">
-              <a href="https://ekron.network" target="_blank" rel="noopener">ekron.network</a><br/>
-              <a href="https://minekron.com" target="_blank" rel="noopener">minekron.com</a><br/>
-              <a href="https://sovikron.com" target="_blank" rel="noopener">sovikron.com</a><br/>
-              <a href="https://alvikron.com" target="_blank" rel="noopener">alvikron.com</a>
-            </div>
-          </div>
-
-          <div>
-            <div class="kv-label">Legal</div>
-            <div class="kv-value">
-              <a href="/legal/terms.html">Terms of Use</a><br/>
-              <a href="/legal/privacy.html">Privacy Policy</a><br/>
-              <a href="/legal/risk.html">Risk Disclosure</a>
-            </div>
-          </div>
-
-          <div>
-            <div class="kv-label">Contact</div>
-            <div class="kv-value">
-              <a href="mailto:hq@tvk.group">hq@tvk.group</a>
-            </div>
-          </div>
+      <section class="link-panel" aria-label="Project links">
+        <div>
+          <span class="card-kicker" data-i18n="linksKicker">Official links</span>
+          <h2 data-i18n="linksTitle">Project destinations</h2>
         </div>
-
-        <div class="chips">
-          <span class="chip">Experimental</span>
-          <span class="chip">Wellness Utility</span>
-          <span class="chip">Transparency</span>
-          <span class="chip">Not financial advice</span>
+        <div class="link-list">
+          <a href="https://www.tvk.group" target="_blank" rel="noopener">TVK Group</a>
+          <a href="https://www.entelekron.org" target="_blank" rel="noopener">EnteleKRON</a>
+          <a href="https://www.sovra.network" target="_blank" rel="noopener">SOVRA</a>
+          <a href="mailto:hq@tvk.group">hq@tvk.group</a>
         </div>
-      </div>
+      </section>
+    </main>
 
-    </aside>
-  </main>
-
-  <footer>
-    <span>© puriKRON • Kron Family experimental token.</span>
-    <span><a href="/legal/risk.html">High-risk disclosure</a> • No financial advice • No guarantees.</span>
-  </footer>
-
-</div>
+    <footer class="site-footer">
+      <span data-i18n="footerBrand">© puriKRON. Kron ecosystem project.</span>
+      <span>
+        <a href="/legal/terms.html" data-localized-link data-i18n="navTerms">Terms</a>
+        <span aria-hidden="true"> / </span>
+        <a href="/legal/privacy.html" data-localized-link data-i18n="navPrivacy">Privacy</a>
+        <span aria-hidden="true"> / </span>
+        <a href="/legal/risk.html" data-localized-link data-i18n="navRisk">Risk</a>
+      </span>
+    </footer>
+  </div>
 </body>
 </html>
