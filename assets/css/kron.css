@@ -69,6 +69,10 @@ header {
   height:44px;
   width:auto;
 }
+.consent-brand .brand-logo {
+  height:auto;
+  width:min(220px, 72vw);
+}
 .brand-emblem {
   display:block;
   height:46px;
