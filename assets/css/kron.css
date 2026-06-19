@@ -64,6 +64,16 @@ header {
   display:flex; align-items:center; gap:12px;
   font-weight:900; letter-spacing:-.04em; font-size:1.16rem; color:#fff;
 }
+.brand-logo {
+  display:block;
+  height:44px;
+  width:auto;
+}
+.brand-emblem {
+  display:block;
+  height:46px;
+  width:46px;
+}
 .brand-mark {
   width:46px; height:46px; border-radius:17px; position:relative;
   background:conic-gradient(from 180deg,var(--gold),var(--orange),var(--violet),var(--gold));
@@ -230,6 +240,12 @@ h1 { margin:24px 0 18px; font-size:clamp(3.3rem, 9vw, 8rem); line-height:.84; le
   box-shadow:0 24px 60px rgba(251,191,36,.25);
 }
 @keyframes rotate { to { transform:rotate(360deg); } }
+.coin-emblem {
+  position:absolute; left:50%; top:34%; width:min(72%, 280px); height:auto;
+  transform:translate(-50%,-50%); z-index:1;
+  filter:drop-shadow(0 28px 90px rgba(34,211,238,.18));
+  animation:pulseOrb 5s ease-in-out infinite;
+}
 .float-chip {
   position:absolute; z-index:4; padding:10px 13px; border-radius:999px;
   background:rgba(255,255,255,.10); border:1px solid var(--line); color:var(--muted);
@@ -808,6 +824,8 @@ body.consent-locked { overflow:hidden; }
   display:flex; align-items:center; gap:12px; margin-bottom:18px;
   font-weight:900; letter-spacing:-.04em; font-size:1.1rem; color:#fff;
 }
+.consent-brand .brand-logo { height:40px; width:auto; }
+.consent-brand .brand-emblem { width:40px; height:40px; }
 .consent-brand .brand-mark { width:40px; height:40px; border-radius:14px; }
 .consent-kicker {
   margin:0 0 8px; color:var(--gold); text-transform:uppercase;

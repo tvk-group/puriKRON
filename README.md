@@ -26,6 +26,14 @@ Mirrors the [eKRON](https://www.ekron.network) site architecture:
 
 12 languages: en, de, fr, it, es, pt, tr, ru, ar, zh, ja, nl
 
+## Logo set
+
+Brand assets live in [`assets/logo/`](assets/logo/). **32×32 SVG icon:**
+
+https://raw.githubusercontent.com/tvk-group/puriKRON/main/assets/logo/icon-32.svg
+
+See [`assets/logo/README.md`](assets/logo/README.md) for the full logo set.
+
 ## Deploy
 
 Static site — deploy to Vercel or any static host. `vercel.json` included.
