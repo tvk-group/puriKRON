@@ -137,3 +137,7 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# Agent skill install artifacts (canonical copies live in .agents/ and .cursor/)
+agent/
+**/__pycache__/
