@@ -26,6 +26,8 @@ Mirrors the [eKRON](https://www.ekron.network) site architecture:
 
 12 languages: en, de, fr, it, es, pt, tr, ru, ar, zh, ja, nl
 
+Drop your exact logo PNG as `assets/logo/purikron-logo-source.png` and run `python3 assets/logo/build-from-source.py` to regenerate all sizes.
+
 ## Logo set
 
 Brand assets live in [`assets/logo/`](assets/logo/). **32×32 SVG icon:**
