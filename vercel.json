@@ -37,7 +37,6 @@
     { "src": "/program", "dest": "/program/index.html" },
     { "src": "/program/", "dest": "/program/index.html" },
     { "src": "/legal/(.*)", "dest": "/legal/$1" },
-    { "src": "/assets/(.*)", "dest": "/assets/$1" },
-    { "src": "/(.*)", "dest": "/404.html", "status": 404 }
+    { "src": "/assets/(.*)", "dest": "/assets/$1" }
   ]
 }
