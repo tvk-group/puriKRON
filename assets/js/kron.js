@@ -13,6 +13,7 @@
   const DATA = window.KRON_DATA;
   const SYMBOL = DATA && DATA.token ? DATA.token.symbol : 'PURIKRON';
   const PENDING = DATA && DATA.contract && DATA.contract.pending;
+  const WALLETS_PUBLISHED = DATA && DATA.contract && DATA.contract.walletsPublished;
 
   function t(key, fallback) {
     if (window.KRON_I18N && window.KRON_I18N.t) {
@@ -107,7 +108,7 @@
         '</div>';
 
       const badge = PENDING
-        ? esc(t('registry.badgePending', 'Phase III · Pending'))
+        ? esc(t(WALLETS_PUBLISHED ? 'registry.badgeWalletsPublished' : 'registry.badgePending', WALLETS_PUBLISHED ? 'Phase III · Wallets Published' : 'Phase III · Pending'))
         : esc(t('registry.badge', '✓ Verified'));
 
       el.innerHTML =

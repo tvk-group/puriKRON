@@ -1,6 +1,7 @@
 /**
  * puriKRON — official on-chain registry (single source of truth)
- * Contract pending: demand-gated Phase III — not deployed until organic demand.
+ * Token contract: demand-gated Phase III — not deployed until organic demand.
+ * Allocation wallets published for verification before launch.
  */
 window.KRON_DATA = {
   token: {
@@ -17,6 +18,7 @@ window.KRON_DATA = {
   },
   contract: {
     pending: true,
+    walletsPublished: true,
     statusKey: 'registry.pendingStatus',
     labelKey: 'registry.contractPending',
     address: null,
@@ -24,8 +26,8 @@ window.KRON_DATA = {
   },
   genesis: {
     labelKey: 'registry.genesis',
-    address: null,
-    basescan: null
+    address: '0xc282390c7eee86628Bd73c472f0ebf453CaB740b',
+    basescan: 'https://basescan.org/address/0xc282390c7eee86628Bd73c472f0ebf453CaB740b'
   },
   allocations: [
     {
@@ -33,32 +35,32 @@ window.KRON_DATA = {
       lockKey: 'registry.roleLpLock',
       pct: '80%',
       amount: '8,000,000,000',
-      address: null,
-      basescan: null
+      address: '0xa5eD5A8B85c9AB7F808B3bD78ee436DEc25ecdD6',
+      basescan: 'https://basescan.org/address/0xa5eD5A8B85c9AB7F808B3bD78ee436DEc25ecdD6'
     },
     {
       roleKey: 'registry.roleEco',
       lockKey: 'registry.roleEcoLock',
       pct: '10%',
       amount: '1,000,000,000',
-      address: null,
-      basescan: null
+      address: '0x172e02190e65Fa5f5C5224Dc9d8664E25Cb78809',
+      basescan: 'https://basescan.org/address/0x172e02190e65Fa5f5C5224Dc9d8664E25Cb78809'
     },
     {
       roleKey: 'registry.roleFounder6',
       lockKey: 'registry.roleFounder6Lock',
       pct: '5%',
       amount: '500,000,000',
-      address: null,
-      basescan: null
+      address: '0x6bB7054DB758bd197Aa15547F45773eb44bD33Ff',
+      basescan: 'https://basescan.org/address/0x6bB7054DB758bd197Aa15547F45773eb44bD33Ff'
     },
     {
       roleKey: 'registry.roleFounder12',
       lockKey: 'registry.roleFounder12Lock',
       pct: '5%',
       amount: '500,000,000',
-      address: null,
-      basescan: null
+      address: '0x6bB7054DB758bd197Aa15547F45773eb44bD33Ff',
+      basescan: 'https://basescan.org/address/0x6bB7054DB758bd197Aa15547F45773eb44bD33Ff'
     }
   ],
   familyTokens: [
