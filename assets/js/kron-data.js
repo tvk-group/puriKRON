@@ -1,7 +1,6 @@
 /**
  * puriKRON — official on-chain registry (single source of truth)
- * Token contract: demand-gated Phase III — not deployed until organic demand.
- * Allocation wallets published for verification before launch.
+ * Live on Base mainnet — fair launch 2026-06-20
  */
 window.KRON_DATA = {
   token: {
@@ -11,18 +10,20 @@ window.KRON_DATA = {
     chainId: 8453,
     decimals: 18,
     totalSupply: '10,000,000,000',
-    deployed: null,
+    deployed: '2026-06-20',
     verified: false,
-    status: 'demand-gated',
+    status: 'live',
     phase: 'III'
   },
   contract: {
-    pending: true,
-    walletsPublished: true,
-    statusKey: 'registry.pendingStatus',
-    labelKey: 'registry.contractPending',
-    address: null,
-    basescan: null
+    pending: false,
+    labelKey: 'registry.contractOfficial',
+    address: '0x679F06AC817a0EEC1fB86629168E40eb10b4A181',
+    basescan: 'https://basescan.org/token/0x679F06AC817a0EEC1fB86629168E40eb10b4A181',
+    blockscout: 'https://base.blockscout.com/token/0x679F06AC817a0EEC1fB86629168E40eb10b4A181',
+    launchTx: 'https://basescan.org/tx/0x8e659e929dd9525a65179e1c94c93110e5d78d33b438745c973b5d7f12428458',
+    blockscoutTx: 'https://base.blockscout.com/tx/0x8e659e929dd9525a65179e1c94c93110e5d78d33b438745c973b5d7f12428458',
+    factory: '0x2CA2F6E849F4994de74d1Af7944249B334117556'
   },
   genesis: {
     labelKey: 'registry.genesis',
@@ -48,24 +49,24 @@ window.KRON_DATA = {
       lockKey: 'registry.roleEcoLock',
       pct: '10%',
       amount: '1,000,000,000',
-      address: '0x172e02190e65Fa5f5C5224Dc9d8664E25Cb78809',
-      basescan: 'https://basescan.org/address/0x172e02190e65Fa5f5C5224Dc9d8664E25Cb78809'
+      address: '0x682e28c704dcda59d04632826b3a311b296b5a15',
+      basescan: 'https://basescan.org/address/0x682e28c704dcda59d04632826b3a311b296b5a15'
     },
     {
       roleKey: 'registry.roleFounder6',
       lockKey: 'registry.roleFounder6Lock',
       pct: '5%',
       amount: '500,000,000',
-      address: '0x6bB7054DB758bd197Aa15547F45773eb44bD33Ff',
-      basescan: 'https://basescan.org/address/0x6bB7054DB758bd197Aa15547F45773eb44bD33Ff'
+      address: '0xae7841a59232b932b804364ab396bed3fa544e85',
+      basescan: 'https://basescan.org/address/0xae7841a59232b932b804364ab396bed3fa544e85'
     },
     {
       roleKey: 'registry.roleFounder12',
       lockKey: 'registry.roleFounder12Lock',
       pct: '5%',
       amount: '500,000,000',
-      address: '0x6bB7054DB758bd197Aa15547F45773eb44bD33Ff',
-      basescan: 'https://basescan.org/address/0x6bB7054DB758bd197Aa15547F45773eb44bD33Ff'
+      address: '0xac7ebeadaa4fc53c81d2f70b31f23d7d72b440b3',
+      basescan: 'https://basescan.org/address/0xac7ebeadaa4fc53c81d2f70b31f23d7d72b440b3'
     }
   ],
   familyTokens: [
@@ -73,7 +74,7 @@ window.KRON_DATA = {
     { name: 'soviKRON', symbol: 'SOVIKRON', url: 'https://www.sovikron.com/', phase: 'II', status: 'queued' },
     { name: 'mineKRON', symbol: 'MINEKRON', url: 'https://www.minekron.com/', phase: 'II', status: 'queued' },
     { name: 'alviKRON', symbol: 'ALVIKRON', url: 'https://www.alvikron.com/', phase: 'II', status: 'queued' },
-    { name: 'puriKRON', symbol: 'PKRON', url: 'https://www.purikron.com/', phase: 'III', status: 'current' },
+    { name: 'puriKRON', symbol: 'PKRON', url: 'https://www.purikron.com/', phase: 'III', status: 'live' },
     { name: 'puppyKRON', symbol: 'PUPPYKRON', url: 'https://www.puppykron.com/', phase: 'III', status: 'gated' },
     { name: 'warpKRON', symbol: 'WARPKRON', url: 'https://www.warpkron.com/', phase: 'III', status: 'gated' }
   ],
