@@ -6,7 +6,7 @@
 window.KRON_DATA = {
   token: {
     name: 'puriKRON',
-    symbol: 'PURIKRON',
+    symbol: 'PKRON',
     network: 'Base',
     chainId: 8453,
     decimals: 18,
@@ -73,7 +73,7 @@ window.KRON_DATA = {
     { name: 'soviKRON', symbol: 'SOVIKRON', url: 'https://www.sovikron.com/', phase: 'II', status: 'queued' },
     { name: 'mineKRON', symbol: 'MINEKRON', url: 'https://www.minekron.com/', phase: 'II', status: 'queued' },
     { name: 'alviKRON', symbol: 'ALVIKRON', url: 'https://www.alvikron.com/', phase: 'II', status: 'queued' },
-    { name: 'puriKRON', symbol: 'PURIKRON', url: 'https://www.purikron.com/', phase: 'III', status: 'current' },
+    { name: 'puriKRON', symbol: 'PKRON', url: 'https://www.purikron.com/', phase: 'III', status: 'current' },
     { name: 'puppyKRON', symbol: 'PUPPYKRON', url: 'https://www.puppykron.com/', phase: 'III', status: 'gated' },
     { name: 'warpKRON', symbol: 'WARPKRON', url: 'https://www.warpkron.com/', phase: 'III', status: 'gated' }
   ],

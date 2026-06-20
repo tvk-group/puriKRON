@@ -45,7 +45,7 @@ contract KronFairLaunch {
 
   /**
    * @param name_ Token name (e.g. "puriKRON")
-   * @param symbol_ Token symbol (e.g. "PURIKRON")
+   * @param symbol_ Token symbol (e.g. "PKRON")
    * @param lpWallet Receives 80% for fair-launch liquidity
    * @param ecosystemBeneficiary Beneficiary of 10% after 12-month lock
    * @param founderBeneficiary Beneficiary of both founder tranches

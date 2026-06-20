@@ -2,7 +2,7 @@
   "name": "purikron-fair-launch-program",
   "version": "1.0.0",
   "private": true,
-  "description": "Deploy puriKRON (PURIKRON) on Base via KronFairLaunch — 80/10/5/5 fair launch",
+  "description": "Deploy puriKRON (PKRON) on Base via KronFairLaunch — 80/10/5/5 fair launch",
   "scripts": {
     "compile": "hardhat compile",
     "test": "hardhat test",

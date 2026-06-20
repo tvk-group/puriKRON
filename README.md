@@ -1,6 +1,6 @@
 # puriKRON
 
-puriKRON (PURIKRON) — Phase III demand-gated KRON Family memecoin spin-off.
+puriKRON (PKRON) — Phase III demand-gated KRON Family memecoin spin-off.
 
 - **Site:** https://www.purikron.com
 - **Primary gateway:** https://www.ekron.network
