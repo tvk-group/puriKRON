@@ -1,0 +1,21 @@
+{
+  "name": "purikron-fair-launch-program",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Deploy puriKRON (PURIKRON) on Base via KronFairLaunch — 80/10/5/5 fair launch",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "deploy:base-sepolia": "hardhat run scripts/deploy.js --network baseSepolia",
+    "deploy:base": "hardhat run scripts/deploy.js --network base",
+    "clean": "hardhat clean"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "dotenv": "^16.4.5",
+    "hardhat": "^2.22.0"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.2"
+  }
+}
