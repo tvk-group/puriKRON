@@ -1,0 +1,48 @@
+puriKRON (PKRON) — Remix launch values
+======================================
+
+REMIX FILES (create 3 files in contracts/ folder):
+  1. KronToken.sol
+  2. KronTimelock.sol
+  3. KronFairLaunch.sol
+
+COMPILER (Remix → Solidity Compiler):
+  Version: 0.8.24
+  Optimization: ON
+  Runs: 200
+
+DEPLOY (Remix → Deploy & Run):
+  Environment: Injected Provider - MetaMask
+  Contract: KronFairLaunch
+  Step 1: Click Deploy (no constructor args)
+  Step 2: Expand deployed contract → call launch() with values below
+
+--- MAINNET (official wallets) ---
+
+name_:                  puriKRON
+symbol_:                PKRON
+lpWallet:               0xa5eD5A8B85c9AB7F808B3bD78ee436DEc25ecdD6
+ecosystemBeneficiary:   0x172e02190e65Fa5f5C5224Dc9d8664E25Cb78809
+founderBeneficiary:     0x6bB7054DB758bd197Aa15547F45773eb44bD33Ff
+
+Deployer (Ledger):      0xc282390c7eee86628Bd73c472f0ebf453CaB740b
+OPS (not used in launch): 0xb45c8268ACf64D1146395Eba74B4cA12A24350FA
+
+Network: Base mainnet (chain id 8453)
+
+--- SEPOLIA TEST (use your own addresses first) ---
+
+name_:                  puriKRON
+symbol_:                PKRON
+lpWallet:               0xc282390c7eee86628Bd73c472f0ebf453CaB740b
+ecosystemBeneficiary:   0xc282390c7eee86628Bd73c472f0ebf453CaB740b
+founderBeneficiary:     0xc282390c7eee86628Bd73c472f0ebf453CaB740b
+
+Network: Base Sepolia (chain id 84532)
+
+AFTER launch — copy from BaseScan event FairLaunchDeployed:
+  token            = PKRON token contract (publish on verify page)
+  ecosystemLock    = 10% timelock address
+  founderShortLock = 5% / 6-month timelock
+  founderLongLock  = 5% / 12-month timelock
+  lpWallet         = holds 8B PKRON for liquidity

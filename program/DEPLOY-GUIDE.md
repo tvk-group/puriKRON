@@ -153,7 +153,7 @@ Already set:
 
 ```
 TOKEN_NAME=puriKRON
-TOKEN_SYMBOL=PURIKRON
+TOKEN_SYMBOL=PKRON
 ```
 
 ---
@@ -197,9 +197,9 @@ npm run deploy:base-sepolia
 1. Hardhat reads `.env` and connects to Base Sepolia
 2. Uses your private key as the signing wallet
 3. Deploys `KronFairLaunch` factory contract
-4. Calls `launch("puriKRON", "PURIKRON", lp, eco, founder)`
+4. Calls `launch("puriKRON", "PKRON", lp, eco, founder)`
 5. In **one transaction**, creates:
-   - PURIKRON token
+   - PKRON token
    - 3 timelock contracts
    - Sends 8B to LP, locks 1B + 500M + 500M
 6. Prints all addresses and writes `deploy-output.json`
@@ -208,7 +208,7 @@ npm run deploy:base-sepolia
 
 1. Open the **Tx hash** from the terminal on [sepolia.basescan.org](https://sepolia.basescan.org)
 2. Open the **token** address → check total supply 10,000,000,000
-3. Open **LP wallet** → should hold 8,000,000,000 PURIKRON
+3. Open **LP wallet** → should hold 8,000,000,000 PKRON
 4. Open each **timelock** → should hold locked amounts
 
 ---

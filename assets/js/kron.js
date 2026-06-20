@@ -11,7 +11,7 @@
   };
 
   const DATA = window.KRON_DATA;
-  const SYMBOL = DATA && DATA.token ? DATA.token.symbol : 'PURIKRON';
+  const SYMBOL = DATA && DATA.token ? DATA.token.symbol : 'PKRON';
   const PENDING = DATA && DATA.contract && DATA.contract.pending;
   const WALLETS_PUBLISHED = DATA && DATA.contract && DATA.contract.walletsPublished;
 

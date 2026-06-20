@@ -23,7 +23,7 @@ async function main() {
   const ecosystemBeneficiary = process.env.ECOSYSTEM_BENEFICIARY;
   const founderBeneficiary = process.env.FOUNDER_BENEFICIARY;
   const tokenName = process.env.TOKEN_NAME || "puriKRON";
-  const tokenSymbol = process.env.TOKEN_SYMBOL || "PURIKRON";
+  const tokenSymbol = process.env.TOKEN_SYMBOL || "PKRON";
   const expectedDeployer = process.env.EXPECTED_DEPLOYER;
 
   if (!lpWallet || !ecosystemBeneficiary || !founderBeneficiary) {
@@ -107,10 +107,10 @@ async function main() {
 
   console.log("\n=== Fair Launch Complete ===\n");
   console.log("TOKEN CONTRACT:     ", result.token);
-  console.log("LP wallet:          ", result.lpWallet, "|", result.lpAmount, "PURIKRON");
-  console.log("Ecosystem timelock: ", result.ecosystemLock, "|", result.ecosystemAmount, "PURIKRON");
-  console.log("Founder 6M lock:    ", result.founderShortLock, "|", result.founderShortAmount, "PURIKRON");
-  console.log("Founder 12M lock:   ", result.founderLongLock, "|", result.founderLongAmount, "PURIKRON");
+  console.log("LP wallet:          ", result.lpWallet, "|", result.lpAmount, "PKRON");
+  console.log("Ecosystem timelock: ", result.ecosystemLock, "|", result.ecosystemAmount, "PKRON");
+  console.log("Founder 6M lock:    ", result.founderShortLock, "|", result.founderShortAmount, "PKRON");
+  console.log("Founder 12M lock:   ", result.founderLongLock, "|", result.founderLongAmount, "PKRON");
   console.log("\nSave this output. Update www.purikron.com verify page with token + timelock addresses.");
 
   const outPath = path.join(__dirname, "..", "deploy-output.json");

@@ -9,7 +9,7 @@ describe("KronFairLaunch", function () {
     const factory = await Factory.deploy();
     await factory.waitForDeployment();
 
-    const tx = await factory.launch("puriKRON", "PURIKRON", lp.address, eco.address, founder.address);
+    const tx = await factory.launch("puriKRON", "PKRON", lp.address, eco.address, founder.address);
     const receipt = await tx.wait();
 
     const event = receipt.logs
