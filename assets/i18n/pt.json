@@ -46,11 +46,12 @@
   },
   "registry": {
     "title": "On-Chain Address Registry",
-    "desc": "Official puriKRON contract and allocation wallets on Base will be published here after demand-gated deployment. Always verify here before sending funds.",
+    "desc": "Official puriKRON allocation wallets on Base are published here. Token contract remains TBA until demand-gated deployment. Always verify here before sending funds.",
     "badge": "✓ Verified",
     "badgePending": "Phase III · Pending",
+    "badgeWalletsPublished": "Phase III · Wallets Published",
     "pendingStatus": "Demand-gated — Phase III",
-    "pendingNote": "Contract not deployed. Launched only on organic community demand — never rushed or presold.",
+    "pendingNote": "Allocation wallets published. Token contract not deployed yet — launched only on organic community demand, never rushed or presold.",
     "contractPending": "puriKRON Contract (Pending)",
     "tba": "TBA",
     "gatewayNote": "Primary KRON Family gateway and live verification:",
@@ -65,7 +66,8 @@
     "roleFounder6Lock": "6-month lock policy",
     "roleFounder12": "Founder (12M)",
     "roleFounder12Lock": "12-month lock policy",
-    "genesis": "Genesis / Deployer"
+    "genesis": "Genesis / Deployer",
+    "ops": "Operations Wallet"
   },
   "home": {
     "pageTitle": "puriKRON — KRON Family Phase III Memecoin | Demand-Gated Fair Launch on Base",
@@ -134,7 +136,7 @@
     "tokenAntiDump": "Anti-dump: <strong>14-day notice</strong> before locked allocation sales · max <strong>10% per event</strong>. <a href=\"/verify/\">Address registry</a> · <a href=\"/standard/\">Fair Launch Standard</a>",
     "onchainKicker": "On-Chain Registry",
     "onchainTitle": "Every official address. One place.",
-    "onchainDesc": "Contract and allocation wallets for puriKRON on Base will appear here after demand-gated deployment. Copy addresses only from this page.",
+    "onchainDesc": "Official puriKRON allocation wallets on Base are listed below. Token contract is TBA until demand-gated deployment. Copy addresses only from this page.",
     "familyKicker": "KRON Family",
     "familyTitle": "Seven tokens. Fair launch only.",
     "familyDesc": "Staggered rollout — eKRON gateway first, themed satellites, then demand-gated spin-offs including puriKRON. Never presale. Never a bundled family sale.",

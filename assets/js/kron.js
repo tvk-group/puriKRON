@@ -13,6 +13,7 @@
   const DATA = window.KRON_DATA;
   const SYMBOL = DATA && DATA.token ? DATA.token.symbol : 'PURIKRON';
   const PENDING = DATA && DATA.contract && DATA.contract.pending;
+  const WALLETS_PUBLISHED = DATA && DATA.contract && DATA.contract.walletsPublished;
 
   function t(key, fallback) {
     if (window.KRON_I18N && window.KRON_I18N.t) {
@@ -78,6 +79,18 @@
     document.querySelectorAll('[data-address-registry]').forEach((el) => {
       const contract = DATA.contract;
       const genesis = DATA.genesis;
+      const ops = DATA.ops;
+
+      function walletCard(wallet) {
+        if (!wallet) return '';
+        return (
+          '<div class="registry-contract-card">' +
+          '<div class="label">' + esc(t(wallet.labelKey)) + '</div>' +
+          '<div class="addr">' + (wallet.address ? esc(wallet.address) : '<em class="addr-pending">' + esc(t('registry.tba', 'TBA')) + '</em>') + '</div>' +
+          addrActions(wallet.address, wallet.basescan) +
+          '</div>'
+        );
+      }
 
       const rows = DATA.allocations.map((a) =>
         '<tr>' +
@@ -99,15 +112,11 @@
           addrActions(contract.address, contract.basescan) +
           '</div>';
 
-      const genesisCard =
-        '<div class="registry-contract-card">' +
-        '<div class="label">' + esc(t(genesis.labelKey)) + '</div>' +
-        '<div class="addr">' + (genesis.address ? esc(genesis.address) : '<em class="addr-pending">' + esc(t('registry.tba', 'TBA')) + '</em>') + '</div>' +
-        addrActions(genesis.address, genesis.basescan) +
-        '</div>';
+      const genesisCard = walletCard(genesis);
+      const opsCard = walletCard(ops);
 
       const badge = PENDING
-        ? esc(t('registry.badgePending', 'Phase III · Pending'))
+        ? esc(t(WALLETS_PUBLISHED ? 'registry.badgeWalletsPublished' : 'registry.badgePending', WALLETS_PUBLISHED ? 'Phase III · Wallets Published' : 'Phase III · Pending'))
         : esc(t('registry.badge', '✓ Verified'));
 
       el.innerHTML =
@@ -120,6 +129,7 @@
         '<div class="registry-contract">' +
         contractCard +
         genesisCard +
+        opsCard +
         '</div>' +
         '<div class="registry-table-wrap">' +
         '<table class="registry" aria-label="' + esc(t('registry.title')) + '">' +
