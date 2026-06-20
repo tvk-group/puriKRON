@@ -29,6 +29,11 @@ window.KRON_DATA = {
     address: '0xc282390c7eee86628Bd73c472f0ebf453CaB740b',
     basescan: 'https://basescan.org/address/0xc282390c7eee86628Bd73c472f0ebf453CaB740b'
   },
+  ops: {
+    labelKey: 'registry.ops',
+    address: '0xb45c8268ACf64D1146395Eba74B4cA12A24350FA',
+    basescan: 'https://basescan.org/address/0xb45c8268ACf64D1146395Eba74B4cA12A24350FA'
+  },
   allocations: [
     {
       roleKey: 'registry.roleLp',

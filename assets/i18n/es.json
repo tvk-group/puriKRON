@@ -66,7 +66,8 @@
     "roleFounder6Lock": "6-month lock policy",
     "roleFounder12": "Founder (12M)",
     "roleFounder12Lock": "12-month lock policy",
-    "genesis": "Genesis / Deployer"
+    "genesis": "Genesis / Deployer",
+    "ops": "Operations Wallet"
   },
   "home": {
     "pageTitle": "puriKRON — KRON Family Phase III Memecoin | Demand-Gated Fair Launch on Base",
