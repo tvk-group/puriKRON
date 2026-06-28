@@ -80,6 +80,12 @@ window.KRON_DATA = {
   ],
   officialChannels: [
     {
+      labelKey: 'channels.app',
+      host: 'app.purikron.com',
+      url: 'https://www.purikron.com/app/',
+      descKey: 'channels.appDesc'
+    },
+    {
       labelKey: 'channels.purikron',
       host: 'www.purikron.com',
       url: 'https://www.purikron.com/',

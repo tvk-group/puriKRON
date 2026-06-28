@@ -1,0 +1,32 @@
+{
+  "name": "puriKRON",
+  "short_name": "puriKRON",
+  "description": "Official puriKRON (PKRON) wallet app — verify, connect, and track on Base.",
+  "start_url": "/app/",
+  "scope": "/app/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#020617",
+  "theme_color": "#020617",
+  "lang": "en",
+  "categories": ["finance", "utilities"],
+  "icons": [
+    {
+      "src": "/assets/logo/icon-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/logo/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/logo/icon-32.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

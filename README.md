@@ -15,6 +15,7 @@ Mirrors the [eKRON](https://www.ekron.network) site architecture:
 | Path | Purpose |
 |------|---------|
 | `/` | Homepage with consent gate, FAQ, family grid |
+| `/app/` | Official PWA wallet app (connect, verify, balance) |
 | `/verify/` | On-chain registry (via `kron-data.js`) |
 | `/standard/` | KRON Fair Launch Standard |
 | `/family/` | 7-token family roster |
