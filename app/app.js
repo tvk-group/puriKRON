@@ -177,32 +177,85 @@
     if (nav) nav.classList.add('active');
   }
 
+  function detectPlatform() {
+    const ua = navigator.userAgent || '';
+    if (/iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)) {
+      return 'ios';
+    }
+    if (/Android/i.test(ua)) return 'android';
+    return 'desktop';
+  }
+
   function setupInstall() {
     const box = $('#install-box');
+    const banner = $('#install-banner');
     const btn = $('#install-btn');
+    const ios = $('#install-ios');
+    const android = $('#install-android');
+    const desktop = $('#install-desktop');
+    const platform = detectPlatform();
     let deferredPrompt = null;
+    const standalone = window.matchMedia('(display-mode: standalone)').matches
+      || window.navigator.standalone === true;
+
+    if (standalone && box) box.hidden = true;
+    if (standalone && banner) banner.hidden = true;
+
+    if (ios) ios.hidden = platform !== 'ios';
+    if (android) android.hidden = platform !== 'android';
+    if (desktop) desktop.hidden = platform !== 'desktop';
+
+    if (btn) {
+      if (platform === 'ios') {
+        btn.textContent = 'Show Install Steps Above';
+        btn.addEventListener('click', () => {
+          box?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          showToast('Safari → Share → Add to Home Screen');
+        });
+      } else {
+        btn.textContent = 'Install App';
+      }
+    }
 
     window.addEventListener('beforeinstallprompt', (e) => {
       e.preventDefault();
       deferredPrompt = e;
-      if (btn) btn.hidden = false;
+      if (btn) btn.textContent = 'Install App Now';
+      if (banner) banner.hidden = true;
     });
 
-    if (btn) {
+    if (btn && platform !== 'ios') {
       btn.addEventListener('click', async () => {
-        if (!deferredPrompt) {
-          showToast('Use browser menu → Install app');
+        if (deferredPrompt) {
+          deferredPrompt.prompt();
+          await deferredPrompt.userChoice;
+          deferredPrompt = null;
+          if (box) box.hidden = true;
           return;
         }
-        deferredPrompt.prompt();
-        await deferredPrompt.userChoice;
-        deferredPrompt = null;
-        btn.hidden = true;
+        if (platform === 'android') {
+          showToast('Chrome menu (⋮) → Install app');
+        } else {
+          showToast('Use install icon in address bar');
+        }
+        box?.scrollIntoView({ behavior: 'smooth' });
       });
     }
 
-    if (window.matchMedia('(display-mode: standalone)').matches && box) {
-      box.hidden = true;
+    if (banner && !standalone && platform !== 'desktop') {
+      banner.hidden = false;
+      const bannerBtn = $('#install-banner-btn');
+      bannerBtn?.addEventListener('click', () => box?.scrollIntoView({ behavior: 'smooth' }));
+      if (platform === 'ios' && $('#install-banner-text')) {
+        $('#install-banner-text').textContent = 'Tap Share → Add to Home Screen';
+      }
+      banner.querySelector('[data-dismiss-banner]')?.addEventListener('click', () => {
+        banner.hidden = true;
+        try { sessionStorage.setItem('purikron-install-banner-dismissed', '1'); } catch (_) {}
+      });
+      try {
+        if (sessionStorage.getItem('purikron-install-banner-dismissed')) banner.hidden = true;
+      } catch (_) {}
     }
   }
 

@@ -7,7 +7,9 @@ const ASSETS = [
   '/app/manifest.json',
   '/assets/css/kron.css',
   '/assets/js/kron-data.js',
-  '/assets/logo/icon-32.svg'
+  '/assets/logo/icon-192.png',
+  '/assets/logo/icon-512.png',
+  '/assets/logo/apple-touch-icon.png'
 ];
 
 self.addEventListener('install', (event) => {
