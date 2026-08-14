@@ -1,4 +1,4 @@
-const CACHE = 'purikron-app-v1';
+const CACHE = 'purikron-app-v2';
 const ASSETS = [
   '/app/',
   '/app/index.html',
